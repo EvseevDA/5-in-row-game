@@ -142,19 +142,6 @@ public final class Field implements Cloneable {
         return field[i][j].isMarked();
     }
 
-    /**
-     * @param i координата по оси X, отсчет ведется слева направо, начиная с 0.
-     * @param j координата по оси Y, отсчет ведется сверху вниз, начиная с 0.
-     * @return {@code true} в случае, если ячейка содержит в себе символ {@code mark},
-     *         {@code false} - в противном случае.
-     * @throws IndexOutOfBoundsException в случае, когда координаты выходят за пределы поля.
-     */
-    public boolean isMarkedByAt(int i, int j, char mark) {
-        checkForBounds(i, j);
-
-        return field[i][j].isMarkedBy(mark);
-    }
-
     private void checkForBounds(int pos) {
         if (pos < 0 || pos >= Constants.FIELD_SIZE) {
             throw new IndexOutOfBoundsException("Wrong coordinates. Coordinates must be in range [0, "

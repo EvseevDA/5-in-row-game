@@ -43,15 +43,6 @@ public final class MessageViewerForUser {
         System.out.println(Constants.TIE_MESSAGE);
     }
 
-
-    /**
-     * Выводит сообщение о том, что введены нечисловые координаты.
-     */
-    public static void notNumericCoordinatesMessage() {
-        System.out.println(Constants.NOT_NUMERIC_COORDINATES_MESSAGE);
-    }
-
-
     /**
      * Выводит сообщение из параметра.
      * @param message сообщение, которое нужно вывести.
