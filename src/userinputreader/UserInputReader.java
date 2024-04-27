@@ -21,7 +21,6 @@ public class UserInputReader implements Closeable {
      * @return пару из координат, введенных пользователем
      */
     public Pair<Integer, Integer> readCoordinates() {
-
         int firstCoordinate;
         int secondCoordinate;
 
@@ -43,7 +42,6 @@ public class UserInputReader implements Closeable {
      */
     public int readChoose() {
         int choose;
-
         try {
             choose = reader.nextInt();
         } catch (InputMismatchException ex) {

@@ -58,26 +58,20 @@ public class GameImpl implements Game {
      */
     @Override
     public void start() {
-
         boolean userMoveResult = true;
 
         gameStart: while (true) {
-
             if (isEnd()) {
-
                 MessageViewerForUser.continueOrStopMessage();
 
                 choosing: while (true) {
-
                     MessageViewerForUser.requestToEnterChoose();
-
                     try {
                         readAnswer();
                     } catch (RuntimeException e) {
                         MessageViewerForUser.showMessage(e.getMessage());
                         continue choosing;
                     }
-
                     break gameStart;
                 }
             }
@@ -109,13 +103,10 @@ public class GameImpl implements Game {
             }
 
             if (isEnd()) {
-
                 MessageViewerForUser.continueOrStopMessage();
 
                 choosing: while (true) {
-
                     MessageViewerForUser.requestToEnterChoose();
-
                     try {
                         readAnswer();
                     } catch (RuntimeException e) {
