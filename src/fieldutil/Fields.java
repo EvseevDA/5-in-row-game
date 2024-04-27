@@ -3,6 +3,8 @@ package fieldutil;
 import constants.Constants;
 import field.Field;
 
+import java.util.Objects;
+
 
 /**
  * Утилита для поля.<p>
@@ -18,6 +20,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getMainDiagonal(Field field) {
+        Objects.requireNonNull(field);
+
         char[] result = new char[Constants.FIELD_SIZE];
 
         for (int i = 0; i < Constants.FIELD_SIZE; ++i) {
@@ -35,6 +39,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getUpperMainDiagonalNumber(int numberOfDiagonal, Field field) {
+        Objects.requireNonNull(field);
+
         char[] result;
 
         try {
@@ -60,6 +66,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getUnderMainDiagonalNumber(int numberOfDiagonal, Field field) {
+        Objects.requireNonNull(field);
+
         char[] result;
 
         try {
@@ -82,6 +90,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getSecondaryDiagonal(Field field) {
+        Objects.requireNonNull(field);
+
         char[] result = new char[Constants.FIELD_SIZE];
 
         for (int i = 0, j = Constants.FIELD_SIZE - 1; i < Constants.FIELD_SIZE && j >= 0; ++i, --j) {
@@ -99,6 +109,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getUpperSecondaryDiagonalNumber(int numberOfDiagonal, Field field) {
+        Objects.requireNonNull(field);
+
         char[] result;
 
         try {
@@ -123,6 +135,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getUnderSecondaryDiagonalNumber(int numberOfDiagonal, Field field) {
+        Objects.requireNonNull(field);
+
         char[] result;
 
         try {
@@ -148,6 +162,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getRowNumber(int numberOfRow, Field field) {
+        Objects.requireNonNull(field);
+
         char[] result = new char[Constants.FIELD_SIZE];
 
         for (int i = numberOfRow - 1, j = 0; j < Constants.FIELD_SIZE; ++j) {
@@ -165,6 +181,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[] getColumnNumber(int numberOfColumn, Field field) {
+        Objects.requireNonNull(field);
+
         char[] result = new char[Constants.FIELD_SIZE];
 
         for (int i = 0, j = numberOfColumn - 1; i < Constants.FIELD_SIZE; ++i) {
@@ -189,6 +207,8 @@ public class Fields {
      * @throws NullPointerException если значение поля {@code null}.
      */
     public static char[][] getAllDiagonalsRowsColumns(Field field) {
+        Objects.requireNonNull(field);
+
         char[][] result = new char[Constants.COUNT_OF_DIAGONALS_IN_FIELD + Constants.COUNT_OF_ROWS_AND_COLUMNS_IN_FIELD][];
         int resultIndex = 0;
 

@@ -6,6 +6,7 @@ import fieldutil.Fields;
 import player.Player;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Класс {@code Field} представляет с собой игровое поле.<p>
@@ -37,7 +38,6 @@ public final class Field implements Cloneable {
      * Заполняет поле ячейками со значениями по умолчанию.
      */
     public Field() {
-
         field = new Cell[Constants.FIELD_SIZE][Constants.FIELD_SIZE];
 
         for (int i = 0; i < Constants.FIELD_SIZE; ++i) {
@@ -53,7 +53,6 @@ public final class Field implements Cloneable {
      */
     @Override
     public String toString() {
-
         StringBuilder fieldView = new StringBuilder();
 
         for (int i = 0; i < Constants.FIELD_SIZE; ++i) {
@@ -74,7 +73,6 @@ public final class Field implements Cloneable {
      * Между строками - {@code '\n'}
      */
     public String toStringWithNumberedRowsAndColumns() {
-
         StringBuilder fieldView = new StringBuilder();
 
         fieldView.append(Constants.INDENT);
@@ -105,6 +103,7 @@ public final class Field implements Cloneable {
      * @throws IndexOutOfBoundsException в случае, когда координаты выходят за пределы поля.
      */
     public boolean setCellStateAt(int i, int j, Cell.CellState state) {
+        Objects.requireNonNull(state);
         checkForBounds(i, j);
 
         if (field[i][j].isMarked()) {

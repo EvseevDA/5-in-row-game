@@ -22,6 +22,7 @@ import fieldutil.FieldAnalysis;
  * @author Dmitry Evseev
  */
 public class AlphaBeta implements Algorithm {
+
     /**
      * Оболочка над методом альфа-бета.
      * @param field поле, на котором играют бот и пользователь.
@@ -34,7 +35,6 @@ public class AlphaBeta implements Algorithm {
     getBestCoordinatesToMove(Field field, Bot bot, User user) {
         return alphaBeta(field, bot, user, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, 0).getFirstValue();
     }
-
 
     /**
      * Реализация алгоритма альфа-бета.
@@ -72,7 +72,6 @@ public class AlphaBeta implements Algorithm {
         Pair<Pair<Integer, Integer>, Integer> result = null;
 
         if (recursionStep % 2 == 0) {
-
             double g = Double.NEGATIVE_INFINITY;
 
             for (int i = 0; i < freeCoordinates.length && g < beta; ++i) {
@@ -91,12 +90,11 @@ public class AlphaBeta implements Algorithm {
                     result.getFirstValue().setSecondValue(freeCoordinates[i].getSecondValue());
                 }
 
-                alpha = max(g, alpha);
+                alpha = Double.max(g, alpha);
             }
         }
 
         if (recursionStep % 2 == 1) {
-
             double g = Double.POSITIVE_INFINITY;
 
             for (int i = 0; i < freeCoordinates.length && g > alpha; ++i) {
@@ -114,19 +112,10 @@ public class AlphaBeta implements Algorithm {
                     result.getFirstValue().setSecondValue(freeCoordinates[i].getSecondValue());
                 }
 
-                beta = min(g, beta);
+                beta = Double.min(g, beta);
             }
         }
+
         return result;
     }
-
-    private double max(Double a, Double b) {
-        return a > b ? a : b;
-    }
-
-    private double min(Double a, Double b) {
-        return a < b ? a : b;
-    }
-
-
 }

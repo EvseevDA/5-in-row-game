@@ -3,6 +3,8 @@ package gameview;
 import constants.Constants;
 import field.Field;
 
+import java.util.Objects;
+
 /**
  * Класс, реализующий отображение поля в консоли.
  * @see Field
@@ -16,6 +18,8 @@ public final class FieldViewer {
      * @param field поле, которое нужно отобразить.
      */
     public static void showField(Field field) {
+        Objects.requireNonNull(field);
+
         System.out.println(Constants.CURRENT_FIELD_MESSAGE);
         System.out.println(field.toStringWithNumberedRowsAndColumns());
         System.out.println("\n\n");

@@ -2,6 +2,8 @@ package gameview;
 
 import constants.Constants;
 
+import java.util.Objects;
+
 /**
  * Класс, реализующий отображение в консоли сообщений для пользователя.
  * @see Constants
@@ -55,7 +57,7 @@ public final class MessageViewerForUser {
      * @param message сообщение, которое нужно вывести.
      */
     public static void showMessage(String message) {
-        System.out.println(message + "\n\n");
+        System.out.println(Objects.requireNonNull(message) + "\n\n");
     }
 
 

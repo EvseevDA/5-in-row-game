@@ -9,6 +9,8 @@ import field.Field;
 import player.Player;
 import util.Pair;
 
+import java.util.Objects;
+
 /**
  * Класс для анализа поля<p>
  * Содержит методы для получения информации о ситуации на поле
@@ -29,6 +31,8 @@ public class FieldAnalysis {
      * @return {@code true}, если игрок победил, иначе - {@code false}.
      */
     public static boolean isWinner(Player player, Field field) {
+        Objects.requireNonNull(player);
+        Objects.requireNonNull(field);
 
         char[][] rowsToCheck = Fields.getAllDiagonalsRowsColumns(field);
 
@@ -48,6 +52,7 @@ public class FieldAnalysis {
      * @return {@code true}, если поле заполнено, иначе - {@code false}.
      */
     public static boolean isFilled(Field field) {
+        Objects.requireNonNull(field);
 
         for (int i = 0; i < Constants.FIELD_SIZE; ++i) {
             for (int j = 0; j < Constants.FIELD_SIZE; ++j) {
@@ -67,6 +72,7 @@ public class FieldAnalysis {
      * @return число свободных ячеек.
      */
     public static int getCountOfFreeCells(Field field) {
+        Objects.requireNonNull(field);
 
         int result = 0;
 
@@ -86,6 +92,7 @@ public class FieldAnalysis {
      * @return массив из пар координат свободных ячеек.
      */
     public static Pair<Integer, Integer>[] getCoordinatesOfFreeCells(Field field) {
+        Objects.requireNonNull(field);
 
         @SuppressWarnings("unchecked")
         Pair<Integer, Integer>[] result = (Pair<Integer, Integer>[]) new Pair[FieldAnalysis.getCountOfFreeCells(field)];
@@ -112,9 +119,9 @@ public class FieldAnalysis {
      * @return {@code true}, если комбинация найдена, {@code false} - если не найдена.
      */
     private static boolean hasFiveInARow(String rowToEval, char mark) {
+        Objects.requireNonNull(rowToEval);
 
         int index = rowToEval.indexOf(String.valueOf(mark).repeat(5));
-
         return index != -1;
     }
 

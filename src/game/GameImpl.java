@@ -12,6 +12,8 @@ import player.*;
 import userinputreader.UserInputReader;
 import util.Pair;
 
+import java.util.Objects;
+
 /**
  * Класс представляет собой реализацию хода игры.
  * @see Minimax
@@ -136,7 +138,7 @@ public class GameImpl implements Game {
      * @param algorithm новый алгоритм для ходов бота.
      */
     public void setAlgorithm(Algorithm algorithm) {
-        algorithmForBotMoves = algorithm;
+        algorithmForBotMoves = Objects.requireNonNull(algorithm);
     }
 
 
@@ -153,16 +155,15 @@ public class GameImpl implements Game {
      * Читает ответ пользователя на предложение начать игру снова или выйти из игры.
      */
     public void readAnswer() {
-
         int choose;
 
         choose = userInputReader.readChoose();
+        userInputReader.close();
 
         if (choose == 1) {
             reset();
             return;
         } else if (choose == 2) {
-            userInputReader.close();
             return;
         }
 

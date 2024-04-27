@@ -2,6 +2,8 @@ package player;
 
 import field.Field;
 
+import java.util.Objects;
+
 /**
  * Класс для созднания сущностей игроков.
  * Содержит фабричный метод, создающий конкертного игрока.
@@ -22,6 +24,8 @@ public class PlayerFactory {
      * @return экземпляр класса конкретного игрока.
      */
     public static Player createPlayer(PlayerRole role, Field field) {
+        Objects.requireNonNull(role);
+        Objects.requireNonNull(field);
 
         if (role == PlayerRole.BOT) {
             return new Bot(field);

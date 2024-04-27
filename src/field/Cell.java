@@ -56,6 +56,8 @@ public final class Cell implements Cloneable {
      * @return ячейку, соответствующую переданному состоянию.
      */
     public static Cell getCellByState(CellState state) {
+        Objects.requireNonNull(state);
+
         if (state == CellState.EMPTY) {
             return EMPTY_CELL;
         }

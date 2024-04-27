@@ -51,13 +51,6 @@ public class Constants {
      */
     public static final int COUNT_OF_ROWS_AND_COLUMNS_IN_FIELD = FIELD_SIZE * 2;
 
-
-    /**
-     * длина комбинации для победы в игре
-     */
-    public static final int LENGTH_OF_ROW_TO_WIN = 5;
-
-
     /**
      * запрос на ввод координат
      */
@@ -92,13 +85,6 @@ public class Constants {
      * сообщение о вводе нечисловых координат
      */
     public static final String NOT_NUMERIC_COORDINATES_MESSAGE = "Coordinates must be numbers.\n\nTry again\n\n";
-
-
-    /**
-     * сообщение об ошибке ввода
-     */
-    public static final String INPUT_ERROR_MESSAGE = "Input error! Try again.\n\n";
-
 
     /**
      * сообщение с предложением новой игры или выхода из игры
@@ -146,11 +132,4 @@ public class Constants {
      * штраф за один шаг рекурсии
      */
     public static final int TAX_PER_RECURSION_STEP = 300;
-
-
-    /**
-     * предложение выхода из игры досрочно
-     */
-    public static final String WORD_TO_EXIT = "Exit";
-
 }

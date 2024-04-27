@@ -68,7 +68,6 @@ public class Minimax implements Algorithm {
 
         // ход бота
         if (recursionStep % 2 == 0) {
-
             Field tempField = (Field) field.clone();
             tempField.setCellStateAt(freeCoordinates[0].getFirstValue(), freeCoordinates[0].getSecondValue(), Cell.CellState.BOT_MARKED);
 
@@ -98,7 +97,6 @@ public class Minimax implements Algorithm {
 
         // ход пользователя
         if (recursionStep % 2 == 1) {
-
             Field tempField = (Field) field.clone();
             tempField.setCellStateAt(freeCoordinates[0].getFirstValue(), freeCoordinates[0].getSecondValue(), Cell.CellState.USER_MARKED);
 
